@@ -24,5 +24,4 @@ tof_total = tof_total + tof;
 % conduct flyby
 [perihelion, aphelion] = flyby(Vs_1, flybys)
 
-
 end % function
