@@ -23,5 +23,4 @@ function [tof,dV] = spiraling(propulsion,flybys,orbit,mass)
        tof = dV/ T / 86400;
     end
 
-    tof = tof/86400; % [day] time of flight in days
 end

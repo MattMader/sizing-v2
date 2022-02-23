@@ -1,11 +1,29 @@
 function [dV_total, tof_total] = trajectory(launch_vehicle,flybys,propulsion,orbit,mass)
 
+%%
+
+
+
 % running totals
 dV_total = 0; % [km/s]
 tof_total = 0; % [km/s]
 
 % Launch vehicle excess Earth C3
 C3 = interp1(launch_vehicle.mass,launch_vehicle.C3,mass.prev.total,'linear','extrap');
+
+%%
+
+C3 = 100;
+mass = struct;
+
+propulsion.name = "Solar Sail";
+flybys.planet = "none";
+
+orbit.perihelion = 0.48*1.496e+8;
+orbit.inclination = 90;
+
+dV_total = 0; % [km/s]
+tof_total = 0; % [km/s]
 
 % check for Hohmann encounter
 [dV, tof, Vs_1] = hohmann_encounter(flybys, C3);
@@ -22,7 +40,7 @@ dV_total = dV_total + dV;
 tof_total = tof_total + tof;
 
 % conduct flyby
-[perihelion, aphelion] = flyby(Vs_1, flybys);
+% [perihelion, aphelion] = flyby(Vs_1, flybys);
 
 % spiraling towards the sun
 [tof,dV] = spiraling(propulsion,flybys,orbit,mass);
@@ -32,4 +50,4 @@ dV_total = dV_total + dV;
 tof_total = tof_total + tof;
 
 
-end % function
+% end % function
