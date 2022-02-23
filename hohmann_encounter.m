@@ -15,7 +15,7 @@ function [dv, tof, Vs_1] = hohmann_encounter(flybys, C3)
         return;
     end
     
-    tof = (flybys.tof)*24*60*60; % [s] Equation for Hohmann Transfer TOF to Planet
+    tof = flybys.tof; % [day] Equation for Hohmann Transfer TOF to Planet
     
     atrans = 0.5*(149597898+flybys.a); % [km] SemiMajor Axis of Hohmann transfer orbit
     Vs_1 = sqrt(2*((132712440018/flybys.a)-(132712440018/(2*atrans)))); % [km/s] Heliocentric velocity for planet approach

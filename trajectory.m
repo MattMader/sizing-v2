@@ -1,4 +1,4 @@
-function [dV_total, tof_total] = trajectory(launch_vehicle,flybys,mass)
+function [dV_total, tof_total] = trajectory(launch_vehicle,flybys,propulsion,orbit,mass)
 
 % running totals
 dV_total = 0; % [km/s]
@@ -17,11 +17,19 @@ if dV == -1
 
 end % if
 
-% increment dV
+% increment dV and tof
 dV_total = dV_total + dV;
 tof_total = tof_total + tof;
 
 % conduct flyby
-[perihelion, aphelion] = flyby(Vs_1, flybys)
+[perihelion, aphelion] = flyby(Vs_1, flybys);
+
+% spiraling towards the sun
+[tof,dV] = spiraling(propulsion,flybys,orbit,mass);
+
+% increment dV and tof
+dV_total = dV_total + dV;
+tof_total = tof_total + tof;
+
 
 end % function

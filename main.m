@@ -65,7 +65,7 @@ orbit.inclination = deg2rad(65); % [rad]
 % % None
 % flybys.name = "None";
 % 
-% % Mercury
+% Mercury
 % flybys.name = "Single Mercury";
 % flybys.planet = "Mercury";
 % flybys.encounters = 1;
@@ -76,16 +76,16 @@ orbit.inclination = deg2rad(65); % [rad]
 % flybys.dV = 7.5; % [km/s] Hohmann dV from Earth
 % flybys.tof = 106.75; % [days] Hohmann time of flight from Earth
 
-% Venus
-flybys.name = "Single Venus";
-flybys.planet = "Venus";
-flybys.encounters = 1;
-flybys.radius = 6051.9; % [km] planetary radius
-flybys.mu = 324858.59883; % [km^3/2^2] standard gravitational parameter
-flybys.a = 108207284; % [km] heliocentric semimajor axis
-flybys.T = 19413722; % [s] heliocentric orbital period
-flybys.dV = 2.5; % [km/s] Hohmann dV from Earth
-flybys.tof = 120; % [days] Hohmann time of flight from Earth
+% % Venus
+% flybys.name = "Single Venus";
+% flybys.planet = "Venus";
+% flybys.encounters = 1;
+% flybys.radius = 6051.9; % [km] planetary radius
+% flybys.mu = 324858.59883; % [km^3/2^2] standard gravitational parameter
+% flybys.a = 108207284; % [km] heliocentric semimajor axis
+% flybys.T = 19413722; % [s] heliocentric orbital period
+% flybys.dV = 2.5; % [km/s] Hohmann dV from Earth
+% flybys.tof = 120; % [days] Hohmann time of flight from Earth
 
 % % Where's Earth???
 % 
@@ -100,16 +100,16 @@ flybys.tof = 120; % [days] Hohmann time of flight from Earth
 % flybys.dV = 2.9; % [km/s] Hohmann dV from Earth
 % flybys.tof = 259.25; % [days] Hohmann time of flight from Earth
 % 
-% % Jupiter
-% flybys.name = "Single Jupiter";
-% flybys.planet = "Jupiter";
-% flybys.encounters = 1;
-% flybys.radius = 71492; % [km] planetary radius
-% flybys.mu = 126712767.858; % [km^3/2^2] standard gravitational parameter
-% flybys.a = 778279959; % [km] heliocentric semimajor axis
-% flybys.T = 374479305; % [s] heliocentric orbital period
-% flybys.dV = 8.8; % [km/s] Hohmann dV from Earth
-% flybys.tof = 730; % [days] Hohmann time of flight from Earth
+% Jupiter
+flybys.name = "Single Jupiter";
+flybys.planet = "Jupiter";
+flybys.encounters = 1;
+flybys.radius = 71492; % [km] planetary radius
+flybys.mu = 126712767.858; % [km^3/2^2] standard gravitational parameter
+flybys.a = 778279959; % [km] heliocentric semimajor axis
+flybys.T = 374479305; % [s] heliocentric orbital period
+flybys.dV = 8.8; % [km/s] Hohmann dV from Earth
+flybys.tof = 730; % [days] Hohmann time of flight from Earth
 
 %% Initial Mass Estimates
 
