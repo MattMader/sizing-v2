@@ -21,5 +21,7 @@ function [tof,dV] = spiraling(propulsion,flybys,orbit,mass)
        dV = sqrt(mu/desired_radius) - sqrt(mu/initial_radius);
        T = 1.77 / mass.prev.total / 1000; % acceleration from ion engine, km/s^2
        tof = dV/ T / 86400;
-     end
+    end
+
+    tof = tof/86400; % [day] time of flight in days
 end
