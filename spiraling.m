@@ -1,12 +1,12 @@
-function [tof,dV] = spiraling(propulsion,flybys,orbit,mass)
+function [tof,dV] = spiraling(propulsion,initial_orbit,final_orbit,mass)
 % assumptions:
 % either solar sail or ion
 % for solar sail use same values as POLARIS
 
     mu = 132712440018;  % [km^3/s^2] solar gravitational parameter
 
-    initial_radius = flybys.a; % [km] start at flyby planet semimajor axis
-    desired_radius = orbit.perihelion; % [km] end at desired perihelion
+    initial_radius = initial_orbit.perihelion; % [km] assuming circular 
+    desired_radius = final_orbit.perihelion; % [km] end at desired perihelion
     
     if propulsion.name == "Solar Sail"
         % S_0 = affordable_budget * 0.8 / price_per_area;

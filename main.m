@@ -58,13 +58,13 @@ propulsion.beta = 0.1; % [-] lightness factor
 
 % POLARIS Final Orbit
 orbit.perihelion = 0.48*1.496e+8; % [km]
-orbit.inclination = deg2rad(90); % [rad]
+orbit.inclination = 90; % [rad]
 
 %% Planetary Flyby Options
 
 % % None
 % flybys.name = "None";
-% 
+
 % Mercury
 % flybys.name = "Single Mercury";
 % flybys.planet = "Mercury";

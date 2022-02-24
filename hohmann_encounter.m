@@ -5,7 +5,11 @@ function [dv, tof, Vs_1] = hohmann_encounter(flybys, C3)
 
     tof = 0;
     Vs_1 = 0;
-    
+
+    if flybys.name == "None"
+        dv = 0;
+        return
+    end
 
     
     if sqrt(C3) < flybys.dV
