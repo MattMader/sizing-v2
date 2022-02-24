@@ -1,6 +1,6 @@
 function [dV_total, tof_total] = trajectory(launch_vehicle,flybys,propulsion,final_orbit,mass)
 
-% solar standard gravitational 
+% solar standard gravitational parameter
 mu = 132712440018; % [km^3/s^2]
 
 % running totals
@@ -53,14 +53,14 @@ else
 end % if doing a flyby
 
 % spiral orbit toward the sun
-[tof,dV] = spiraling(propulsion,initial_orbit,final_orbit,mass);
+[tof,dV] = spiraling(propulsion,initial_orbit,final_orbit);
 
 % increment tof and dV
 dV_total = dV_total + dV; % [km/s]
 tof_total = tof_total + tof; % [days]
 
 % crank the inclination
-[tof,dV] = cranking(propulsion,final_orbit, mass);
+[tof,dV] = cranking(propulsion,final_orbit);
 
 % increment tof and dV
 dV_total = dV_total + dV; % [km/s]
