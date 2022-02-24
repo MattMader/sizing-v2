@@ -12,7 +12,7 @@ if propulsion.type == "Solar Sail"
     beta = propulsion.beta; % [-]
     
     % payload mass (everything minus the solar sail)
-    m_payload = mass.prev.bus; % [kg]
+    m_payload = mass.payload; % [kg]
     
     % sail material area density
     rho_material = propulsion.rho_material; % [kg/m^2]
@@ -47,10 +47,10 @@ if propulsion.type == "Solar Sail"
 elseif propulsion.type == "Ion"
 
     % spacecraft mass (everything except launch vehicle)
-    m_spacecraft = mass.prev.total; % [kg]
+    m_spacecraft = mass.total; % [kg]
 
     % payload mass (spacecraft mass minus propulsion and propellant)
-    m_payload = mass.prev.bus; % [kg]
+    m_payload = mass.payload; % [kg]
 
     % required nominal acceleration
     accel = propulsion.accel; % [m/s^2]

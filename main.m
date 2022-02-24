@@ -122,9 +122,9 @@ flybys.tof = 120; % [days] Hohmann time of flight from Earth
 
 %% Initial Mass Estimates
 
-mass.prev.bus = sum(payload.mass); % [kg] everything minus propulsion
-mass.prev.total = 2*sum(payload.mass); % [kg] everything
+mass0.payload = sum(payload.mass); % [kg] everything minus propulsion
+mass0.total = 2*sum(payload.mass); % [kg] everything
 
 %% Sizing
 
-[tof,cost] = sizing(launch_vehicle,payload,propulsion,orbit,flybys,mass)
+[tof,new_mass,cost] = sizing(launch_vehicle,payload,propulsion,orbit,flybys,mass0)

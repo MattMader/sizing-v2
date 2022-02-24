@@ -8,7 +8,7 @@ dV_total = 0; % [km/s]
 tof_total = 0; % [km/s]
 
 % Launch vehicle excess Earth C3
-C3 = interp1(launch_vehicle.mass,launch_vehicle.C3,mass.prev.total,'linear','extrap'); % [km^2/s^2]
+C3 = interp1(launch_vehicle.mass,launch_vehicle.C3,mass.total,'linear','extrap'); % [km^2/s^2]
 
 % check for positive C3
 if C3 < 0
