@@ -43,13 +43,22 @@ payload.cost = [19.3, 13.7, 17.6, 41.5, 26.9, 6.8, 24.3, 17.9, 24.3]*1e6; % [USD
 %% Propulsion Options
 
 % Solar Sail
-propulsion.name = "Solar Sail";
+propulsion.name = "Solar Sail based on ACS3";
+propulsion.type = "Solar Sail";
 propulsion.beta = 0.1; % [-] lightness factor
+propulsion.rho_material = 0.0133; % [kg/m^2] sail material area density
+propulsion.lambda_spars = 0.1286; % [kg/m] spar material linear density
 
-% % Ion Engine
-% propulsion.name = "Ion";
-% propulsion.Isp = 4190; % [s] specific impulse (Dawn Ion Engine)
-% 
+% % NEXT Ion Engine (DOI 10.2514/6.2007-5199)
+% propulsion.name = "NEXT Ion Engines";
+% propulsion.type = "Ion";
+% propulsion.accel = 1e-04; % [km/s^2] nominal acceleration required     currently arbituary ~100mm/s^2
+% propulsion.thrust = 0.236; % [N/engine] thrust per engine
+% propulsion.power = 6900; % [W/engine] power per engine
+% propulsion.Isp = 4100; % [s] specific impulse per engine
+% propulsion.mass = 58.2; % [kg/engine] mass per engine
+% propulsion.cost = 15000000; % [USD/engine] cost per engine        source on this?
+
 % % Chemical Engine (storable)
 % propulsion.name = "Chemical";
 % propulsion.Isp = 317; % [s] specific impulse (Juno Main Engine)
@@ -118,4 +127,4 @@ mass.prev.total = 2*sum(payload.mass); % [kg] everything
 
 %% Sizing
 
-sizing(launch_vehicle,payload,propulsion,orbit,flybys,mass);
+[tof,cost] = sizing(launch_vehicle,payload,propulsion,orbit,flybys,mass)
