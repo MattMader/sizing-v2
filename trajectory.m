@@ -3,6 +3,9 @@ function [dV_total, tof_total] = trajectory(launch_vehicle,flybys,propulsion,fin
 % solar standard gravitational parameter
 mu = 132712440018; % [km^3/s^2]
 
+% AU in km
+AU = 1.496e+8; % [km]
+
 % running totals
 dV_total = 0; % [km/s]
 tof_total = 0; % [km/s]
@@ -25,7 +28,7 @@ if flybys.name ~= "None"
         dV_total = dV_total + flybys.dV - sqrt(C3); % [km/s]
         tof_total = tof_total + flybys.tof; % [days]
 
-        atrans = 0.5*(149597898+flybys.a); % [km] SemiMajor Axis of Hohmann transfer orbit
+        atrans = 0.5*(AU+flybys.a); % [km] SemiMajor Axis of Hohmann transfer orbit
         Vs_1 = sqrt(2*((mu/flybys.a)-(mu/(2*atrans)))); % [km/s] Heliocentric velocity for planet approach
 
     else

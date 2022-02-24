@@ -10,7 +10,7 @@ mass0.payload = inf;
 % convergence tolerance
 epsilon = 1e-3;
 
-while max(abs([mass.total-mass0.total,mass.payload-mass0.payload])) > epsilon
+while abs(mass.total-mass0.total) > epsilon || abs(mass.payload-mass0.payload) > epsilon
 
     % trajectory analysis
     [dV, tof] = trajectory(launch_vehicle,flybys,propulsion,orbit,mass);
